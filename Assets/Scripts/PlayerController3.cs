@@ -33,8 +33,8 @@ public class PlayerController3 : MonoBehaviour
 		input.y = Input.GetAxis("Vertical");
 		input = Vector2.ClampMagnitude(input, 1f);
 
-		pitch = input.y*turnSpeed*Time.deltaTime;
-		yaw = input.x*turnSpeed*Time.deltaTime;
+		pitch = -input.y*turnSpeed*Time.deltaTime;
+		yaw = -input.x*turnSpeed*Time.deltaTime;
 		
 		transform.Rotate(pitch, 0f, yaw);
 
