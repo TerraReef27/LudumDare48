@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,9 +6,16 @@ public class GameManager : MonoBehaviour
 
 	public event OnResetDelegate OnReset;
     public delegate void OnResetDelegate();
+	public event OnBlackoutDelegate OnBlackout;
+    public delegate void OnBlackoutDelegate();
 
-	public void Reset()
+	public void TriggerReset()
 	{
 		OnReset?.Invoke();
+	}
+
+	public void TriggerBlackout()
+	{
+		OnBlackout?.Invoke();
 	}
 }

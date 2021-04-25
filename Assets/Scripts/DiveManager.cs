@@ -65,6 +65,11 @@ public class DiveManager : MonoBehaviour
 		ascentRate = playerController.Velocity.y * 10f * Time.deltaTime;
 		ascentValue += Mathf.Clamp(ascentRate, 0f, maxAscentValue);
 		ascentValue -= Mathf.Clamp(ascentValue * (ascentReduction * Time.deltaTime), 0f, maxAscentValue);
+
+		if(ascentValue >= 1)
+		{
+			gameManager.Blackout();
+		}
 	}
 
 	private void GameManager_OnReset()

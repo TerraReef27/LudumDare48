@@ -20,11 +20,15 @@ public class CollectionController : MonoBehaviour
 	private float pickupTimerMax = .3f;
 
     private Collider characterCollider = null;
+	private GameManager gameManager;
 
 	void Awake()
 	{
 		characterCollider = GetComponent<Collider>();
 		collectables = new List<Collectable>();
+		gameManager = FindObjectOfType<GameManager>();
+		gameManager.OnReset += GameManager_OnReset;
+		gameManager.OnBlackout += GameManager_OnBlackout;
 	}
 
     void Start()
@@ -71,5 +75,14 @@ public class CollectionController : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	private void GameManager_OnReset()
+	{
+		collectables.Clear();
+	}
+	private void GameManager_OnBlackout()
+	{
+		totalCurrency = 0;
 	}
 }
