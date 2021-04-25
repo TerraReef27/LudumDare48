@@ -25,7 +25,6 @@ public class Shop : MonoBehaviour
 	public bool Purchase(int cost)
 	{
 		int currency = collectionController.totalCurrency;
-		Debug.Log("Cost: " + cost + " Currency: " + currency);
 		if(currency > 0 && currency - cost >= 0)
 		{
 			collectionController.totalCurrency -= cost;

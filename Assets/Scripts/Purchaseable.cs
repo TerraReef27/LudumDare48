@@ -19,7 +19,6 @@ public class Purchaseable : MonoBehaviour
 	[SerializeField] private TMP_Text descriptionText;
 	
 	private Shop shop;
-	private bool isDisabled;
 
 	[SerializeField] private UnityEvent purchaseEvent;
 
@@ -32,16 +31,14 @@ public class Purchaseable : MonoBehaviour
 	void Start()
 	{
 		currentIteration = 0;
-		isDisabled = false;
 	}
-	
+
 	public void OnClick()
 	{
 		if(currentIteration < costs.Length)
 		{
 			if(shop.Purchase(costs[currentIteration]))
 			{
-				Debug.Log("Purchased!");
 				purchaseEvent.Invoke();
 				currentIteration++;
 				if(currentIteration >= costs.Length)

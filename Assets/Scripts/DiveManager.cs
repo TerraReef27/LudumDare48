@@ -22,10 +22,13 @@ public class DiveManager : MonoBehaviour
 	public float AscentReduction {get{return ascentReduction;} set{ascentReduction=value;}}
 
 	private PlayerController4 playerController;
+	private GameManager gameManager;
 
 	void Awake()
 	{
 		playerController = GetComponent<PlayerController4>();
+		gameManager = FindObjectOfType<GameManager>();
+		gameManager.OnReset += GameManager_OnReset;
 	}
 
     void Start()
@@ -38,15 +41,18 @@ public class DiveManager : MonoBehaviour
     
     void Update()
     {
-		psi += airLossRate * Time.deltaTime;;
-        psi = Mathf.Clamp(psi, 0f, maxPsi);
-		depth = this.transform.position.y;
+		if(!gameManager.paused)
+		{
+			psi += airLossRate * Time.deltaTime;;
+			psi = Mathf.Clamp(psi, 0f, maxPsi);
+			depth = this.transform.position.y;
 
-		if(depth > maxDepth)
-			maxDepth = depth;
+			if(depth > maxDepth)
+				maxDepth = depth;
 
-		CalculateAirLoss();
-		CalculateAscentRate();
+			CalculateAirLoss();
+			CalculateAscentRate();
+		}
     }
 
 	private void CalculateAirLoss()
@@ -59,5 +65,11 @@ public class DiveManager : MonoBehaviour
 		ascentRate = playerController.Velocity.y * 10f * Time.deltaTime;
 		ascentValue += Mathf.Clamp(ascentRate, 0f, maxAscentValue);
 		ascentValue -= Mathf.Clamp(ascentValue * (ascentReduction * Time.deltaTime), 0f, maxAscentValue);
+	}
+
+	private void GameManager_OnReset()
+	{
+		psi = maxPsi;
+		ascentRate = 0f;
 	}
 }
