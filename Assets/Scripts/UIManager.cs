@@ -10,12 +10,15 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private TMP_Text depthNumber;
 	[SerializeField] private Slider ascentSlider;
 	[SerializeField] private TMP_Text ascentText;
+	[SerializeField] private TMP_Text compacityText;
 	private float currentUITime;
-	private DiveManager divemanager;
+	private DiveManager diveManager;
+	private CollectionController collectionController;
 
 	void Awake()
 	{
-		divemanager = FindObjectOfType<DiveManager>();
+		diveManager = FindObjectOfType<DiveManager>();
+		collectionController = FindObjectOfType<CollectionController>();
 	}
 	void Start()
 	{
@@ -26,9 +29,9 @@ public class UIManager : MonoBehaviour
 	{
 		if(currentUITime >= uiUpdateRate)
 		{
-			int clampPsi = Mathf.FloorToInt(divemanager.Psi);
+			int clampPsi = Mathf.FloorToInt(diveManager.Psi);
 			psiNumber.text = "PSI: " + clampPsi;
-			psiSlider.value = divemanager.Psi / divemanager.MaxPsi;
+			psiSlider.value = diveManager.Psi / diveManager.MaxPsi;
 			currentUITime = 0f + (currentUITime % uiUpdateRate);
 		}
 		else
@@ -36,11 +39,11 @@ public class UIManager : MonoBehaviour
 			currentUITime += Time.deltaTime;
 		}
 	
-		int clampDepth = Mathf.FloorToInt(divemanager.Depth);
+		int clampDepth = Mathf.FloorToInt(diveManager.Depth);
 		clampDepth = Mathf.Abs(clampDepth);
 		depthNumber.text = clampDepth+" m";
 
-		float ascentRisk = divemanager.AscentValue / divemanager.MaxAscentValue;
+		float ascentRisk = diveManager.AscentValue / diveManager.MaxAscentValue;
 		ascentSlider.value = ascentRisk;
 
 		if(ascentRisk >= .8f)
@@ -59,5 +62,7 @@ public class UIManager : MonoBehaviour
 		{
 			ascentText.text = "Low";
 		}
+
+		compacityText.text = collectionController.CurrentCompacity.ToString("0.00") + "/" + collectionController.MaxCompacity.ToString("0.00");
 	}
 }
