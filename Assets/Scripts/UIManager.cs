@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
 		clampDepth = Mathf.Abs(clampDepth);
 		depthNumber.text = clampDepth+" m";
 
-		float ascentRisk = divemanager.AcsentRate / divemanager.MaxAcsentRate;
+		float ascentRisk = divemanager.AscentRate / divemanager.MaxAscentRate;
 		ascentSlider.value = ascentRisk;
 
 		if(ascentRisk >= .8f)

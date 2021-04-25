@@ -17,6 +17,8 @@ public class DiveManager : MonoBehaviour
 	public float MaxAscentRate {get{return maxAscentRate;}}
 	private float ascentRate;
 	public float AscentRate {get{return ascentRate;}}
+	private List<float> speedList;
+	private int speedListMax = 10;
 	private Vector3 previousPos;
 	private PlayerController3 PlayerController;
 
@@ -49,13 +51,37 @@ public class DiveManager : MonoBehaviour
 
 	private void CalculateAscentRate()
 	{
+		float posDiff = this.transform.position.y - previousPos.y;
+
+		if(speedList.Count < speedListMax)
+		{
+			speedList.Add(posDiff);
+		}
+		else if(speedList.Count >= speedListMax)
+		{
+			speedList.RemoveAt(0);
+			speedList.Add(posDiff);
+		}
+
+		float averageAscentSpeed = 0f;
+		if(speedList.Count > 0)
+		{
+			foreach(float speed in speedList)
+			{
+				averageAscentSpeed += speed;
+			}
+			averageAscentSpeed /= speedList.Count;
+		}
+
+		float metersPerMinute = averageAscentSpeed * 60; //Not actually represetnative of meters per second
+
+		if(metersPerMinute > 0f)
+		{
+			ascentRate += averageAscentSpeed;
+		}
 		if(!(depth > 10f))
 		{
-			Vector3 posDiff = this.transform.position - previousPos;
-			if(posDiff.y > 0f)
-			{
-				ascentRate += posDiff.y;
-			}
+			
 		}
 
 		this.transform.position = previousPos;

@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController3 : MonoBehaviour
+public class PlayerController4 : MonoBehaviour
 {
 	private Rigidbody rb = null;
 
+	[SerializeField] private float maxSwimHeight = -.2f;
 	[SerializeField] private float swimSpeed = 1f;
+	[SerializeField] private float swimDeceleration = 2f;
 	[SerializeField] private float maxAcceleration = 5f;
 	[SerializeField] private float turnSpeed = 1f;
-	
-	private float velocity;
 
 	private float pitch, yaw = 0f;
 	private Vector3 move, movementVector;
+	[SerializeField] private Vector3 velocity;
+	Vector2 input;
+	private bool isSwimming;
 	public Vector3 Move {get {return move;}}
 
 	[SerializeField] private Transform cam = null;
@@ -32,12 +35,8 @@ public class PlayerController3 : MonoBehaviour
 
 	void Update()
 	{
-		move = Vector3.zero;
-		velocity = 0f;
-		
 		animator.SetBool("Movement", false);
 
-		Vector2 input;
 		input.x = Input.GetAxis("Horizontal");
 		input.y = Input.GetAxis("Vertical");
 		input = Vector2.ClampMagnitude(input, 1f);
@@ -47,25 +46,40 @@ public class PlayerController3 : MonoBehaviour
 			animator.SetBool("Movement", true);
 		}
 
+		if(Input.GetButton("Jump"))
+		{
+			isSwimming = true;
+			animator.SetBool("Movement", true);
+		}
+		else
+		{
+			isSwimming = false;
+		}
+	}
+
+	void FixedUpdate()
+	{
 		pitch = -input.y*turnSpeed*Time.deltaTime;
 		yaw = -input.x*turnSpeed*Time.deltaTime;
 		
 		transform.Rotate(pitch, 0f, yaw);
 
-		if(Input.GetButton("Jump"))
+		if(isSwimming)
 		{
-			velocity = swimSpeed * Time.deltaTime;
-
-			if(this.transform.position.y < 0f || this.transform.up.y <= 0)
-			{
-				animator.SetBool("Movement", true);
-				move = this.transform.up * velocity;
-				Debug.Log(move);
-				Vector3 moveTo = this.transform.position + (move);
-				rb.MovePosition(moveTo);
-			}
+			velocity = this.transform.up * swimSpeed;
+		}
+		else
+		{
+			velocity = Vector3.MoveTowards(velocity, Vector3.zero, swimDeceleration * Time.deltaTime);
 		}
 
-		rb.velocity = this.transform.up;
+		if(this.transform.position.y >= maxSwimHeight && velocity.y > 0)
+		{
+			velocity.y = 0f;
+		}
+
+		Vector3 displacement = velocity * Time.deltaTime;
+
+		rb.MovePosition(this.transform.localPosition + displacement);
 	}
 }
