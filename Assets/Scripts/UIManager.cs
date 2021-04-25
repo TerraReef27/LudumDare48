@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private Slider ascentSlider;
 	[SerializeField] private TMP_Text ascentText;
 	[SerializeField] private TMP_Text compacityText;
+	[SerializeField] public TMP_Text interactText;
 	private float currentUITime;
 	private DiveManager diveManager;
 	private CollectionController collectionController;

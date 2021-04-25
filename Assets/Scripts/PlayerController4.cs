@@ -90,6 +90,7 @@ public class PlayerController4 : MonoBehaviour
 	private void GameManager_OnReset()
 	{
 		this.gameObject.transform.position = startPosition;
+		this.gameObject.transform.eulerAngles = new Vector3(90f,0f,0f);
 		velocity = Vector3.zero;
 	}
 }

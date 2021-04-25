@@ -20,12 +20,14 @@ public class CollectionController : MonoBehaviour
 
     private Collider characterCollider = null;
 	private GameManager gameManager;
+	private UIManager uiManager;
 
 	public event OnCashInDeligate OnCashIn;
     public delegate void OnCashInDeligate(int cratesCollected, int currencyEarned);
 
 	void Awake()
 	{
+		uiManager = FindObjectOfType<UIManager>();
 		characterCollider = GetComponent<Collider>();
 		collectables = new List<Collectable>();
 		gameManager = FindObjectOfType<GameManager>();
@@ -62,22 +64,24 @@ public class CollectionController : MonoBehaviour
 	{		
 		if(other.gameObject.tag == "Collectable")
 		{
-			if(clickPickup)
+			Collectable collectable = other.gameObject.GetComponent<Collectable>();
+			if(!(currentCompacity + collectable.weight > maxCompacity))
 			{
-				pickupTimer = 0;
-				clickPickup = false;
-
-				Collectable collectable = other.gameObject.GetComponent<Collectable>();
-				if(collectable)
+				uiManager.interactText.text = "Interact to pickup";
+				if(clickPickup)
 				{
-					if(!(currentCompacity + collectable.weight > maxCompacity))
-					{
-						collectables.Add(collectable);
-						currentCompacity += collectable.weight;
-						currency += collectable.value;
-						collectable.Collect();
-					}
+					pickupTimer = 0;
+					clickPickup = false;
+
+					collectables.Add(collectable);
+					currentCompacity += collectable.weight;
+					currency += collectable.value;
+					collectable.Collect();
 				}
+			}
+			else
+			{
+				uiManager.interactText.text = "Not enough carry compacity";
 			}
 		}
 		else if(other.gameObject.tag == "Shop")
@@ -89,6 +93,11 @@ public class CollectionController : MonoBehaviour
 				clickPickup = false;
 				CashIn();
 			}
+			uiManager.interactText.text = "Interact to deposit salvage";
+		}
+		else
+		{
+			uiManager.interactText.text = "";
 		}
 	}
 
