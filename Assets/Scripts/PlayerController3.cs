@@ -10,9 +10,11 @@ public class PlayerController3 : MonoBehaviour
 	[SerializeField] private float maxAcceleration = 5f;
 	[SerializeField] private float turnSpeed = 1f;
 	
-	private Vector3 velocity, movementVector;
+	private float velocity;
 
 	private float pitch, yaw = 0f;
+	private Vector3 move, movementVector;
+	public Vector3 Move {get {return move;}}
 
 	[SerializeField] private Transform cam = null;
 	private Animator animator = null;
@@ -30,6 +32,9 @@ public class PlayerController3 : MonoBehaviour
 
 	void Update()
 	{
+		move = Vector3.zero;
+		velocity = 0f;
+		
 		animator.SetBool("Movement", false);
 
 		Vector2 input;
@@ -49,10 +54,12 @@ public class PlayerController3 : MonoBehaviour
 
 		if(Input.GetButton("Jump"))
 		{
+			velocity = swimSpeed * Time.deltaTime;
+
 			if(this.transform.position.y < 0f || this.transform.up.y <= 0)
 			{
 				animator.SetBool("Movement", true);
-				Vector3 move = this.transform.up * swimSpeed * Time.deltaTime;
+				move = this.transform.up * velocity;
 				Debug.Log(move);
 				Vector3 moveTo = this.transform.position + (move);
 				rb.MovePosition(moveTo);
