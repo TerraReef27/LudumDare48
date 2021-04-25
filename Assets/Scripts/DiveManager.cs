@@ -3,9 +3,9 @@ using UnityEngine;
 public class DiveManager : MonoBehaviour
 {
 	[SerializeField] private float maxPsi;
-	public float MaxPsi {get{return maxPsi;}}
+	public float MaxPsi {get{return maxPsi;} set{maxPsi=value;}}
     [SerializeField] private float psi;
-	public float Psi { get { return psi; } }
+	public float Psi {get{return psi;}}
 	private float depth;
 	public float Depth {get{return depth;}}
 	private float maxDepth;
@@ -18,12 +18,20 @@ public class DiveManager : MonoBehaviour
 	private float ascentValue;
 	public float AscentValue {get{return ascentValue;}}
 	[SerializeField] private float ascentReduction;
+	public float AscentReduction {get{return ascentReduction;} set{ascentReduction=value;}}
+
+	public int totalMoney = 0;
 	private PlayerController4 playerController;
+
+	void Awake()
+	{
+		playerController = GetComponent<PlayerController4>();
+	}
 
     void Start()
     {
 		psi = maxPsi;
-        playerController = GetComponent<PlayerController4>();
+		totalMoney = 0;
 
 		CalculateAirLoss();
     }

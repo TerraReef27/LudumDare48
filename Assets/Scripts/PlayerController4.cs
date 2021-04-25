@@ -6,6 +6,7 @@ public class PlayerController4 : MonoBehaviour
 
 	[SerializeField] private float maxSwimHeight = -.2f;
 	[SerializeField] private float swimSpeed = 1f;
+	public float SwimSpeed {get{return swimSpeed;} set{swimSpeed=value;}}
 	[SerializeField] private float swimDeceleration = 2f;
 	[SerializeField] private float maxAcceleration = 5f;
 	[SerializeField] private float turnSpeed = 1f;
@@ -25,11 +26,6 @@ public class PlayerController4 : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody>();
 		animator = GetComponentInChildren<Animator>();
-	}
-
-	void Start()
-	{
-		
 	}
 
 	void Update()
