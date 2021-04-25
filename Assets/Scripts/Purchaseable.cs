@@ -27,17 +27,22 @@ public class Purchaseable : MonoBehaviour
 	{
 		shop = FindObjectOfType<Shop>();
 		UpdateUI();
-		isDisabled = false;
 	}
 
+	void Start()
+	{
+		currentIteration = 0;
+		isDisabled = false;
+	}
+	
 	public void OnClick()
 	{
 		if(currentIteration < costs.Length)
 		{
 			if(shop.Purchase(costs[currentIteration]))
 			{
-				purchaseEvent.Invoke();
 				Debug.Log("Purchased!");
+				purchaseEvent.Invoke();
 				currentIteration++;
 				if(currentIteration >= costs.Length)
 				{
