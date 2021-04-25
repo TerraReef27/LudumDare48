@@ -21,6 +21,9 @@ public class CollectionController : MonoBehaviour
     private Collider characterCollider = null;
 	private GameManager gameManager;
 
+	public event OnCashInDeligate OnCashIn;
+    public delegate void OnCashInDeligate(int cratesCollected, int currencyEarned);
+
 	void Awake()
 	{
 		characterCollider = GetComponent<Collider>();
@@ -40,15 +43,18 @@ public class CollectionController : MonoBehaviour
     
     void Update()
     {
-		pickupTimer = Mathf.Clamp(pickupTimer - Time.deltaTime, 0f, pickupTimerMax);
-		if(pickupTimer <= 0)
-			clickPickup = false;
-		else
-			clickPickup = true;
-
-		if(Input.GetButtonDown("Interact"))
+		if(!gameManager.paused)
 		{
-			pickupTimer = pickupTimerMax;
+			pickupTimer = Mathf.Clamp(pickupTimer - Time.deltaTime, 0f, pickupTimerMax);
+			if(pickupTimer <= 0)
+				clickPickup = false;
+			else
+				clickPickup = true;
+
+			if(Input.GetButtonDown("Interact"))
+			{
+				pickupTimer = pickupTimerMax;
+			}
 		}
     }
 
@@ -76,12 +82,20 @@ public class CollectionController : MonoBehaviour
 		}
 		else if(other.gameObject.tag == "Shop")
 		{
-
+			if(clickPickup)
+			{
+				Debug.Log("called");
+				pickupTimer = 0;
+				clickPickup = false;
+				CashIn();
+			}
 		}
 	}
 
-	public void CacheIn()
+	private void CashIn()
 	{
+		gameManager.SwitchUI(1);
+
 		int currencyGained = 0;
 		int cratesSalvaged = 0;
 		foreach (Collectable crate in collectables)
@@ -89,16 +103,21 @@ public class CollectionController : MonoBehaviour
 			currencyGained += crate.value;
 			cratesSalvaged++;
 		}
-
+		collectables.Clear();
 		totalCurrency+=currencyGained;
+		currentCompacity = 0;
+
+		OnCashIn?.Invoke(cratesSalvaged, currencyGained);
 	}
 
 	private void GameManager_OnReset()
 	{
-		collectables.Clear();
+		
 	}
 	private void GameManager_OnBlackout()
 	{
 		totalCurrency = 0;
+		currentCompacity = 0;
+		collectables.Clear();
 	}
 }

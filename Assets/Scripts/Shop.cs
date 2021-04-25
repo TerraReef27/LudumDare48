@@ -38,4 +38,11 @@ public class Shop : MonoBehaviour
 	{
 		moneyText.text = "$"+collectionController.totalCurrency;
 	}
+
+	public void DiveAgain()
+	{
+		var gm = FindObjectOfType<GameManager>();
+		gm.TriggerReset();
+		gm.SwitchUI(0);
+	}
 }

@@ -21,10 +21,13 @@ public class GameManager : MonoBehaviour
 		Debug.Log("Blackout");
 		OnBlackout?.Invoke();
 		TriggerReset();
+		SwitchUI(3);
 	}
 
 	public void SwitchUI(int uiNum) //I know a key value would make more sense. Just lemme jank this
 	{
+		paused = uiNum != 0 ? true : false;
+
 		for(int i=0;i<UIs.Length;i++)
 		{
 			if(i == uiNum)

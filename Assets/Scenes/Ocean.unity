@@ -1315,7 +1315,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 257170773}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 494788614}
+        m_TargetAssemblyTypeName: EarningsUI, Assembly-CSharp
+        m_MethodName: ShopBttn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &257170773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2228,7 +2240,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 369941957}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1912320135}
+        m_TargetAssemblyTypeName: BlackoutUI, Assembly-CSharp
+        m_MethodName: DiveAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &369941957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2619,7 +2643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &494788613
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2660,9 +2684,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdddda1f31df4a3488a5911ce6580c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crateNumTxt: {fileID: 0}
-  earnedTxt: {fileID: 0}
-  totalTxt: {fileID: 0}
+  crateNumTxt: {fileID: 322289427}
+  earnedTxt: {fileID: 1255493519}
+  totalTxt: {fileID: 271057636}
 --- !u!1 &516263902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,7 +2993,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 546240438}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 523837510}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: DiveAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &546240438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4842,7 +4878,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857205861}
-  m_LocalRotation: {x: 0.1671649, y: -0.032678865, z: 0.0055438573, w: 0.98537165}
+  m_LocalRotation: {x: 0.16716768, y: -0.03218471, z: 0.0054600257, w: 0.9853879}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7044,7 +7080,7 @@ MonoBehaviour:
   maxSwimHeight: -0.2
   swimSpeed: 2.5
   swimDeceleration: 2
-  turnSpeed: 20
+  turnSpeed: 40
   velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1414811219
 GameObject:
@@ -8772,7 +8808,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867678219}
-  m_LocalRotation: {x: 0.16716494, y: -0.032678876, z: 0.0055438597, w: 0.98537165}
+  m_LocalRotation: {x: 0.1671677, y: -0.032184724, z: 0.0054600276, w: 0.9853879}
   m_LocalPosition: {x: 438, y: 3, z: 265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8963,6 +8999,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1912320134}
+  - component: {fileID: 1912320135}
   m_Layer: 5
   m_Name: BlackoutUI
   m_TagString: Untagged
@@ -8994,6 +9031,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1912320135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912320133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc4d4236501c274b94ded7db7b74796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1954053402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9431,7 +9480,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paused: 0
-  UIs: []
+  UIs:
+  - {fileID: 973502848}
+  - {fileID: 494788612}
+  - {fileID: 523837508}
+  - {fileID: 1912320133}
 --- !u!4 &2030279935
 Transform:
   m_ObjectHideFlags: 0

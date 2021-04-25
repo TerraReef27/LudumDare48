@@ -82,5 +82,6 @@ public class DiveManager : MonoBehaviour
 	{
 		psi = maxPsi;
 		ascentRate = 0f;
+		ascentValue = 0f;
 	}
 }
