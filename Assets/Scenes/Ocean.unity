@@ -381,7 +381,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28267422}
-  m_LocalRotation: {x: 0.15331319, y: 0.000000008501481, z: -0.0000000013189826, w: 0.98817766}
+  m_LocalRotation: {x: 0.15331319, y: -0.000000008501481, z: 0.0000000013189826, w: 0.98817766}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1140,6 +1140,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeAscentReduction
       objectReference: {fileID: 0}
+    - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 438550774}
+    - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
     - target: {fileID: 5393429189563920519, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: m_text
       value: 'Go upwards quicker without being in danger
@@ -1155,8 +1163,68 @@ PrefabInstance:
       propertyPath: description
       value: 'Go upwards quicker without being in danger
 
-        Increase ascent
+        Multiply ascent
         reduction by: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[0]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[1]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[2]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 438550774}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeAscentReduction
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Purchaseable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
@@ -1995,6 +2063,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368675394}
   m_CullTransparentMesh: 1
+--- !u!114 &369214220 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+  m_PrefabInstance: {fileID: 1452967920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88df940b3bb626f41927f13a7f18630a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &422418559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2061,6 +2140,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d78463821e20c144182c5b77c2122064, type: 3}
   m_PrefabInstance: {fileID: 422418559}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &438550774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+  m_PrefabInstance: {fileID: 219666524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88df940b3bb626f41927f13a7f18630a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &456297340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,11 +2638,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 523837508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d42cda5f24f3e3542917f56a1a94de4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1904dab15ba6f6649b0251263719146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 682123974}
-  diveManager: {fileID: 0}
 --- !u!1 &532900285
 GameObject:
   m_ObjectHideFlags: 0
@@ -4246,6 +4335,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeAirEfficiency
       objectReference: {fileID: 0}
+    - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1156000471}
+    - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
     - target: {fileID: 5393429189563920519, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: m_text
       value: 'Breathe more efficiently
@@ -4258,7 +4355,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: description
-      value: "Breathe more efficiently\nDecrease air loss by: \n"
+      value: "Breathe more efficiently\nMutiply air efficiency by: \n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[0]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[1]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[2]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[3]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[2]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[3]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1156000471}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeAirConsuption
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Purchaseable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
@@ -4978,6 +5143,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2dc48090d008ac74ab315e32f7a50a40, type: 3}
   m_PrefabInstance: {fileID: 1023853127}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1156000471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+  m_PrefabInstance: {fileID: 853016135}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88df940b3bb626f41927f13a7f18630a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1175497910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5317,6 +5493,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7557192941062307406, guid: 1bbfdc28012269e45b37e05a7db7e213, type: 3}
+--- !u!114 &1219348898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+  m_PrefabInstance: {fileID: 1618509734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88df940b3bb626f41927f13a7f18630a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1249327954
 GameObject:
   m_ObjectHideFlags: 0
@@ -5896,6 +6083,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeSwimSpeed
       objectReference: {fileID: 0}
+    - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1820198858}
+    - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
     - target: {fileID: 5393429189563920519, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: m_text
       value: 'Swim around quickly
@@ -5910,7 +6105,83 @@ PrefabInstance:
       propertyPath: description
       value: 'Swim around quickly
 
-        Increase swim speed by: '
+        Multiply swim speed by: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[0]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[2]
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[3]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[4]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[0]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[1]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[3]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[4]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1820198858}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeSwimSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Purchaseable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
@@ -6111,6 +6382,7 @@ MonoBehaviour:
   maxCompacity: 10
   currency: 0
   totalCurrency: 0
+  currencyMultiplier: 1
 --- !u!114 &1374116100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6471,6 +6743,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeCarryCompacity
       objectReference: {fileID: 0}
+    - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 369214220}
+    - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
     - target: {fileID: 5393429189563920519, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: m_text
       value: 'Carry more salvage
@@ -6486,6 +6766,74 @@ PrefabInstance:
       value: 'Carry more salvage
 
         Increase carry compacity by: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[0]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[1]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[2]
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[3]
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[1]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[3]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 369214220}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeCarryCompacity
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Purchaseable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
@@ -6897,6 +7245,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeSales
       objectReference: {fileID: 0}
+    - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1219348898}
+    - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
     - target: {fileID: 5393429189563920519, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: m_text
       value: 'Better bartering skills earns you more money
@@ -6912,8 +7268,68 @@ PrefabInstance:
       propertyPath: description
       value: 'Better bartering skills earns you more money
 
-        Increase sell
-        multiplyer by: '
+        Multiply the
+        sell value by: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[0]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[1]
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: costs.Array.data[2]
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[0]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[1]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: values.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1219348898}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeCurrencyMultiplier
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Purchaseable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+      propertyPath: purchaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
@@ -7382,6 +7798,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785482399}
   m_CullTransparentMesh: 1
+--- !u!114 &1820198858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
+  m_PrefabInstance: {fileID: 1298407014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88df940b3bb626f41927f13a7f18630a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1836100478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4739ed200f5376d45850cebfed477121, type: 3}
@@ -7773,7 +8200,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884406898}
-  m_LocalRotation: {x: 0.18910751, y: 0.000000008447955, z: -0.0000000016269276, w: 0.9819564}
+  m_LocalRotation: {x: 0.18910751, y: -0.0000000084479606, z: 0.0000000016269286, w: 0.9819564}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8322,12 +8749,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1219348898}
     - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8338,7 +8765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ShopUI, Assembly-CSharp
+      value: Purchaseable, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5393429189333992460, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -8362,7 +8789,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: description
-      value: 'Increase amount of air in tank Increase by: '
+      value: 'Increase amount of air in tank
+
+        Increase by: '
       objectReference: {fileID: 0}
     - target: {fileID: 6387902623433463650, guid: 6593afcd8c2eee24bb26db907c702208, type: 3}
       propertyPath: costs.Array.size

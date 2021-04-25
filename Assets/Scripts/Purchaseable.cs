@@ -46,6 +46,10 @@ public class Purchaseable : MonoBehaviour
 				}
 				UpdateUI();
 			}
+			else
+			{
+				Debug.Log("Could not purchase");
+			}
 		}
 		else
 		{
@@ -63,7 +67,7 @@ public class Purchaseable : MonoBehaviour
 		buttonText.text = "No Furthur Upgrades";
 		costText.text = "N/A";
 		descriptionText.text = description + " N/A";
-		GetComponent<Button>().interactable = false;
+		GetComponentInChildren<Button>().interactable = false;
 	}
 
 	public void UpgradeAirCap()
@@ -84,7 +88,7 @@ public class Purchaseable : MonoBehaviour
 	}
 	public void UpgradeCarryCompacity()
 	{
-		shop.DiveManager.AirEfficiency *= values[currentIteration];
+		shop.CollectionController.MaxCompacity += values[currentIteration];
 	}
 	public void UpgradeCurrencyMultiplier()
 	{

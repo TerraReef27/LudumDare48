@@ -18,6 +18,8 @@ public class Shop : MonoBehaviour
 	void OnEnable()
 	{
 		diveManager = FindObjectOfType<DiveManager>();
+		collectionController = FindObjectOfType<CollectionController>();
+		playerController = FindObjectOfType<PlayerController4>();
 		UpdateUI();
 	}
 	public bool Purchase(int cost)
