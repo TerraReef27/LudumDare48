@@ -78,4 +78,16 @@ public class Purchaseable : MonoBehaviour
 	{
 		shop.PlayerController.SwimSpeed += values[currentIteration];
 	}
+	public void UpgradeAirConsuption()
+	{
+		shop.DiveManager.AirEfficiency *= values[currentIteration];
+	}
+	public void UpgradeCarryCompacity()
+	{
+		shop.DiveManager.AirEfficiency *= values[currentIteration];
+	}
+	public void UpgradeCurrencyMultiplier()
+	{
+		shop.CollectionController.currencyMultiplier *= values[currentIteration];
+	}
 }

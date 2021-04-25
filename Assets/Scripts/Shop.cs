@@ -12,6 +12,9 @@ public class Shop : MonoBehaviour
 	public DiveManager DiveManager{get{return diveManager;}}
 	private PlayerController4 playerController;
 	public PlayerController4 PlayerController{get{return playerController;}}
+	private CollectionController collectionController;
+	public CollectionController CollectionController{get{return collectionController;}}
+
 	void OnEnable()
 	{
 		diveManager = FindObjectOfType<DiveManager>();
@@ -19,9 +22,9 @@ public class Shop : MonoBehaviour
 	}
 	public bool Purchase(int cost)
 	{
-		if(cost - diveManager.totalMoney > 0)
+		if(cost - collectionController.totalCurrency > 0)
 		{
-			diveManager.totalMoney -= cost;
+			collectionController.totalCurrency -= cost;
 			UpdateUI();
 			return true;
 		}
@@ -33,6 +36,6 @@ public class Shop : MonoBehaviour
 
 	private void UpdateUI()
 	{
-		moneyText.text = "$"+diveManager.totalMoney;
+		moneyText.text = "$"+collectionController.totalCurrency;
 	}
 }

@@ -10,6 +10,7 @@ public class DiveManager : MonoBehaviour
 	public float Depth {get{return depth;}}
 	private float maxDepth;
 	[SerializeField] private float airEfficiency;
+	public float AirEfficiency {get{return airEfficiency;} set{airEfficiency=value;}}
 	private float airLossRate;
 	[SerializeField] private float maxAscentValue;
 	public float MaxAscentValue {get{return maxAscentValue;}}
@@ -20,7 +21,6 @@ public class DiveManager : MonoBehaviour
 	[SerializeField] private float ascentReduction;
 	public float AscentReduction {get{return ascentReduction;} set{ascentReduction=value;}}
 
-	public int totalMoney = 0;
 	private PlayerController4 playerController;
 
 	void Awake()
@@ -31,7 +31,6 @@ public class DiveManager : MonoBehaviour
     void Start()
     {
 		psi = maxPsi;
-		totalMoney = 0;
 
 		CalculateAirLoss();
     }

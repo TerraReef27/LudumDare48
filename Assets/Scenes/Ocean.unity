@@ -2118,7 +2118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money:
+  m_text: 'Currency:
 
 '
   m_isRightToLeft: 0
@@ -6110,6 +6110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCompacity: 10
   currency: 0
+  totalCurrency: 0
 --- !u!114 &1374116100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6127,7 +6128,6 @@ MonoBehaviour:
   airEfficiency: 1
   maxAscentValue: 20
   ascentReduction: 1
-  totalMoney: 0
 --- !u!4 &1374116101
 Transform:
   m_ObjectHideFlags: 0
@@ -7773,7 +7773,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884406898}
-  m_LocalRotation: {x: 0.18910751, y: -0.0000000084479606, z: 0.0000000016269286, w: 0.9819564}
+  m_LocalRotation: {x: 0.18910751, y: 0.000000008447955, z: -0.0000000016269276, w: 0.9819564}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

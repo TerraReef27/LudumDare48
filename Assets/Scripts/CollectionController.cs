@@ -5,11 +5,15 @@ using UnityEngine;
 public class CollectionController : MonoBehaviour
 {
 	[SerializeField] private float maxCompacity;
-	public float MaxCompacity {get{return maxCompacity;}}
+	public float MaxCompacity {get{return maxCompacity;} set{maxCompacity = value;}}
 	private float currentCompacity;
 	public float CurrentCompacity {get{return currentCompacity;}}
 	[SerializeField] private int currency;
+	public int totalCurrency = 0;
+	public float currencyMultiplier = 1f;
+
 	private List<Collectable> collectables;
+
 
 	private bool clickPickup;
 	private float pickupTimer = 0f;
@@ -25,6 +29,7 @@ public class CollectionController : MonoBehaviour
 
     void Start()
     {
+		totalCurrency = 0;
 		currentCompacity = 0f;	
 		pickupTimer = 0f;
     }
