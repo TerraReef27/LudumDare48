@@ -47,7 +47,6 @@ public class PlayerController3 : MonoBehaviour
 		
 		transform.Rotate(pitch, 0f, yaw);
 
-		Debug.Log(this.transform.up);
 		if(Input.GetButton("Jump"))
 		{
 			if(this.transform.position.y < 0f || this.transform.up.y <= 0)

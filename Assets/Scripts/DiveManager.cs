@@ -1,24 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class DiveManager : MonoBehaviour
 {
 	[SerializeField] private float maxPsi;
+	public float MaxPsi { get { return maxPsi; } }
     [SerializeField] private float psi;
-	[SerializeField] private float depth;
+	public float Psi { get { return psi; } }
+	private float depth;
+	public float Depth { get { return depth; } }
 	[SerializeField] private float airlossRate;
-	[SerializeField] private float uiUpdateRate;
-	private float currentUITime;
 	private PlayerController3 PlayerController;
-	[SerializeField] private Slider psiSlider;
-	[SerializeField] private TMP_Text psiNumber;
 
     void Start()
     {
-		currentUITime = 0;
 		psi = maxPsi;
         PlayerController = GetComponent<PlayerController3>();
     }
@@ -26,23 +22,8 @@ public class DiveManager : MonoBehaviour
     
     void Update()
     {
-        psi -= airlossRate * Time.deltaTime;
-
-		UpdateUI();
+		psi -= airlossRate * Time.deltaTime;;
+        psi = Mathf.Clamp(psi, 0f, maxPsi);
+		depth = this.transform.position.y;
     }
-
-	private void UpdateUI()
-	{
-		if(currentUITime >= uiUpdateRate)
-		{
-			int clampPsi = Mathf.FloorToInt(psi);
-			psiNumber.text = "PSI: " + clampPsi;
-			psiSlider.value = psi / maxPsi;
-			currentUITime = 0f + (currentUITime % uiUpdateRate);
-		}
-		else
-		{
-			currentUITime += Time.deltaTime;
-		}
-	}
 }
