@@ -14,7 +14,6 @@ public class CollectionController : MonoBehaviour
 
 	private List<Collectable> collectables;
 
-
 	private bool clickPickup;
 	private float pickupTimer = 0f;
 	private float pickupTimerMax = .3f;
@@ -75,6 +74,23 @@ public class CollectionController : MonoBehaviour
 				}
 			}
 		}
+		else if(other.gameObject.tag == "Shop")
+		{
+
+		}
+	}
+
+	public void CacheIn()
+	{
+		int currencyGained = 0;
+		int cratesSalvaged = 0;
+		foreach (Collectable crate in collectables)
+		{
+			currencyGained += crate.value;
+			cratesSalvaged++;
+		}
+
+		totalCurrency+=currencyGained;
 	}
 
 	private void GameManager_OnReset()

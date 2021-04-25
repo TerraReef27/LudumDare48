@@ -45,6 +45,12 @@ public class DiveManager : MonoBehaviour
 		{
 			psi += airLossRate * Time.deltaTime;;
 			psi = Mathf.Clamp(psi, 0f, maxPsi);
+
+			if(psi <= 0)
+			{
+				gameManager.TriggerBlackout();
+			}
+
 			depth = this.transform.position.y;
 
 			if(depth > maxDepth)
@@ -66,9 +72,9 @@ public class DiveManager : MonoBehaviour
 		ascentValue += Mathf.Clamp(ascentRate, 0f, maxAscentValue);
 		ascentValue -= Mathf.Clamp(ascentValue * (ascentReduction * Time.deltaTime), 0f, maxAscentValue);
 
-		if(ascentValue >= 1)
+		if(ascentValue >= maxAscentValue)
 		{
-			gameManager.Blackout();
+			gameManager.TriggerBlackout();
 		}
 	}
 
