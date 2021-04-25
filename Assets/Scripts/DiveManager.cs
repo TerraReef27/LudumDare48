@@ -13,19 +13,19 @@ public class DiveManager : MonoBehaviour
 	private float maxDepth;
 	[SerializeField] private float airEfficiency;
 	private float airLossRate;
-	private float maxAscentRate;
-	public float MaxAscentRate {get{return maxAscentRate;}}
+	[SerializeField] private float maxAscentValue;
+	public float MaxAscentValue {get{return maxAscentValue;}}
 	private float ascentRate;
 	public float AscentRate {get{return ascentRate;}}
-	private List<float> speedList;
-	private int speedListMax = 10;
-	private Vector3 previousPos;
-	private PlayerController3 PlayerController;
+	private float ascentValue;
+	public float AscentValue {get{return ascentValue;}}
+	[SerializeField] private float ascentReduction;
+	private PlayerController4 playerController;
 
     void Start()
     {
 		psi = maxPsi;
-        PlayerController = GetComponent<PlayerController3>();
+        playerController = GetComponent<PlayerController4>();
 
 		CalculateAirLoss();
     }
@@ -51,39 +51,8 @@ public class DiveManager : MonoBehaviour
 
 	private void CalculateAscentRate()
 	{
-		float posDiff = this.transform.position.y - previousPos.y;
-
-		if(speedList.Count < speedListMax)
-		{
-			speedList.Add(posDiff);
-		}
-		else if(speedList.Count >= speedListMax)
-		{
-			speedList.RemoveAt(0);
-			speedList.Add(posDiff);
-		}
-
-		float averageAscentSpeed = 0f;
-		if(speedList.Count > 0)
-		{
-			foreach(float speed in speedList)
-			{
-				averageAscentSpeed += speed;
-			}
-			averageAscentSpeed /= speedList.Count;
-		}
-
-		float metersPerMinute = averageAscentSpeed * 60; //Not actually represetnative of meters per second
-
-		if(metersPerMinute > 0f)
-		{
-			ascentRate += averageAscentSpeed;
-		}
-		if(!(depth > 10f))
-		{
-			
-		}
-
-		this.transform.position = previousPos;
+		ascentRate = playerController.Velocity.y * 10f * Time.deltaTime;
+		ascentValue += Mathf.Clamp(ascentRate, 0f, maxAscentValue);
+		ascentValue -= Mathf.Clamp((ascentValue - ascentReduction) * Time.deltaTime, 0f, maxAscentValue);
 	}
 }

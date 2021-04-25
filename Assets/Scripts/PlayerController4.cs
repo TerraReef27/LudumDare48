@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController4 : MonoBehaviour
@@ -15,6 +13,7 @@ public class PlayerController4 : MonoBehaviour
 	private float pitch, yaw = 0f;
 	private Vector3 move, movementVector;
 	[SerializeField] private Vector3 velocity;
+	public Vector3 Velocity {get {return velocity;}}
 	Vector2 input;
 	private bool isSwimming;
 	public Vector3 Move {get {return move;}}
