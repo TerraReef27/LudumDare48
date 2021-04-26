@@ -67,7 +67,7 @@ public class CollectionController : MonoBehaviour
 			Collectable collectable = other.gameObject.GetComponent<Collectable>();
 			if(!(currentCompacity + collectable.weight > maxCompacity))
 			{
-				uiManager.interactText.text = "Interact to pickup";
+				uiManager.interactText.text = "E to pickup";
 				if(clickPickup)
 				{
 					pickupTimer = 0;
@@ -93,7 +93,7 @@ public class CollectionController : MonoBehaviour
 				clickPickup = false;
 				CashIn();
 			}
-			uiManager.interactText.text = "Interact to deposit salvage";
+			uiManager.interactText.text = "E to deposit salvage";
 		}
 		else
 		{

@@ -35,7 +35,19 @@ public class SalvageGenerator : MonoBehaviour
 			float ypos = terrain.SampleHeight(spawnPos) - 500f + .5f;
 
 			spawnPos = new Vector3(xpos, ypos, zpos);
-			Instantiate(crates[0], spawnPos, Quaternion.identity, lootHolder.transform);
+
+			
+			float rand = Random.Range(0, 100) - spawnPos.y/2;
+			int type = 0;
+			if(rand > 95)
+				type = 2;
+			else if(rand > 60)
+				type = 1;
+			else
+				type = 0;
+
+
+			Instantiate(crates[type], spawnPos, Quaternion.identity, lootHolder.transform);
 			spawned++;
 		}
 	}
